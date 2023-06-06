@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Créer un nouveau projet</h1>
+
+    <form method="POST" action="{{ path('create_project') }}">
+        {{ form_row(form.name) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.startDate) }}
+        {{ form_row(form.endDate) }}
+
+        <button type="submit">Créer le projet</button>
+    </form>
+{% endblock %}

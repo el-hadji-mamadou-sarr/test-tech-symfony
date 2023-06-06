@@ -1,0 +1,13 @@
+{# templates/home/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>My Projects</h1>
+
+    <ul>
+        {% for projectName in projectNames %}
+            <li>{{ projectName }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

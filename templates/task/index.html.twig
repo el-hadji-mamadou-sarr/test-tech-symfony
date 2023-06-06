@@ -1,0 +1,17 @@
+{# templates/task/create_task.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Create Task</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.end_date) }}
+        {{ form_row(form.priority) }}
+        {{ form_row(form.status) }}
+
+        <button type="submit">Create</button>
+    {{ form_end(form) }}
+{% endblock %}

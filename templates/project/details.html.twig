@@ -1,0 +1,26 @@
+{# templates/project/details.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>{{ project.name }}</h1>
+
+    <p>Description: {{ project.description }}</p>
+    <p>Start Date: {{ project.start_date|date('Y-m-d') }}</p>
+    <p>End Date: {{ project.end_date|date('Y-m-d') }}</p>
+
+    <h2>Tasks</h2>
+
+    {% if project.tasks|length > 0 %}
+        <ul>
+            {% for task in project.tasks %}
+                <li>{{ task.name }}</li>
+                <li>{{ task.end_date|date('Y-m-d') }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks found.</p>
+    {% endif %}
+
+    <a href="{{ path('create_task', {'projectId': project.id}) }}">Create New Task</a>
+{% endblock %}
